@@ -1,0 +1,7 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page pageEncoding="UTF-8" %>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+
+<footer>
+    <h5>© Neko Sushi. Sushi restaurant 2024</h5>
+</footer>

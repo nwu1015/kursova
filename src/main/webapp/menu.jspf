@@ -1,0 +1,151 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page pageEncoding="UTF-8" %>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<h1 id="menu" class="text-title">МЕНЮ</h1>
+<br>
+<div class="card-container-wrapper">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="images/california-poppies.png">
+            </div>
+            <h1>Каліфорнія макі</h1>
+            <p>Тут є риба</p>
+            <div class="price-and-button">
+                <h2>116 грн</h2>
+                <button><i class="fa fa-shopping-basket"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="images/california-poppies.png">
+            </div>
+            <h1>Каліфорнія макі</h1>
+            <p>Тут є риба</p>
+            <div class="price-and-button">
+                <h2>116 грн</h2>
+                <button><i class="fa fa-shopping-basket"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="images/california-poppies.png">
+            </div>
+            <h1>Каліфорнія макі</h1>
+            <p>Тут є риба</p>
+            <div class="price-and-button">
+                <h2>116 грн</h2>
+                <button><i class="fa fa-shopping-basket"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="images/california-poppies.png">
+            </div>
+            <h1>Каліфорнія макі</h1>
+            <p>Тут є риба</p>
+            <div class="price-and-button">
+                <h2>116 грн</h2>
+                <button><i class="fa fa-shopping-basket"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="images/california-poppies.png">
+            </div>
+            <h1>Каліфорнія макі</h1>
+            <p>Тут є риба</p>
+            <div class="price-and-button">
+                <h2>116 грн</h2>
+                <button><i class="fa fa-shopping-basket"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="images/california-poppies.png">
+            </div>
+            <h1>Каліфорнія макі</h1>
+            <p>Тут є риба</p>
+            <div class="price-and-button">
+                <h2>116 грн</h2>
+                <button><i class="fa fa-shopping-basket"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="images/california-poppies.png">
+            </div>
+            <h1>Каліфорнія макі</h1>
+            <p>Тут є риба</p>
+            <div class="price-and-button">
+                <h2>116 грн</h2>
+                <button><i class="fa fa-shopping-basket"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="images/california-poppies.png">
+            </div>
+            <h1>Каліфорнія макі</h1>
+            <p>Тут є риба</p>
+            <div class="price-and-button">
+                <h2>116 грн</h2>
+                <button><i class="fa fa-shopping-basket"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="images/california-poppies.png">
+            </div>
+            <h1>Каліфорнія макі</h1>
+            <p>Тут є риба</p>
+            <div class="price-and-button">
+                <h2>116 грн</h2>
+                <button><i class="fa fa-shopping-basket"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="images/california-poppies.png">
+            </div>
+            <h1>Каліфорнія макі</h1>
+            <p>Тут є риба</p>
+            <div class="price-and-button">
+                <h2>116 грн</h2>
+                <button><i class="fa fa-shopping-basket"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
