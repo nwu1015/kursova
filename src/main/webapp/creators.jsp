@@ -3,12 +3,12 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
 <body>
-<%@include file="header.jspf"%>
+<%@include file="WEB-INF/components/header.jspf"%>
 <style>
 
     .creators{
@@ -66,6 +66,6 @@
         </ul>
     </div>
 </div>
-<%@include file="footer.jspf"%>
+<%@include file="WEB-INF/components/footer.jspf"%>
 </body>
 </html>

@@ -44,11 +44,52 @@
 <h2 class="text-title">Оформлення замовлення:</h2>
 
 <form class="confirm-purchase">
-    <input type="text" placeholder="Введіть ваше ім'я">
-    <input type="text" placeholder="Введіть ваше місто">
-    <input type="text" placeholder="Введіть вулицю проживання"> <input type="text" placeholder="Будинок"> <input type="text" placeholder="Квартира">
-    <input type="number" placeholder="Введіть ваш номер телефону">
+    <br>
+    <div class="input-group-basket">
+        <label class="label-basket">Ім'я</label>
+        <input autocomplete="off" name="Name" id="Name" class="input-basket" type="text">
+    </div>
+    <br>
+
+    <div class="input-group-basket">
+        <label class="label-basket">Вкажіть ваше місто</label>
+        <input autocomplete="off" name="City" id="City" class="input-basket" type="text">
+    </div>
+    <br>
+
+    <div class="input-group-basket">
+        <label class="label-basket">Вкажіть вулицю проживання</label>
+        <input autocomplete="off" name="Adress" id="Adress" class="input-basket" type="text" placeholder="Вулиця">
+        <br>
+        <input autocomplete="off" name="House" id="House" class="input-basket" type="text" placeholder="Будинок">
+        <br>
+        <input autocomplete="off" name="Flat" id="Flat" class="input-basket" type="text" placeholder="Квартира">
+    </div>
+    <br>
+
+    <div class="input-group-basket">
+        <label class="label-basket">Вкажіть ваш номер телефону</label>
+        <input autocomplete="off" name="Phone" id="Phone" class="input-basket" type="tel">
+    </div>
+    <br>
+
+    <div class="input-group-basket">
+        <label class="label-basket">Електронна адреса</label>
+        <input autocomplete="off" name="Email" id="Email" class="input-basket" type="email">
+    </div>
+    <br>
+    <div class="input-group-basket">
+        <button type="submit" onclick="popup.showModal()">Підтвердити</button>
+        <dialog id="popup">
+            <form method="dialog">
+                <p>test</p>
+                <button type="button" onclick="popup.close()">OK</button>
+            </form>
+        </dialog>
+    </div>
 </form>
+
+
 <%@include file="footer.jspf"%>
 </body>
 </html>

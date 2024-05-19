@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Whoops!</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
 </head>
 <body>
 <div class="notifications-container">
@@ -20,9 +20,9 @@
                 <p>Переконайтеся, що ваш логін та пароль коректно введені
                 </p>
             </div>
-                <a class="error-prompt-link" href="login.jsp">Повернутись назад</a>
+                <a class="error-prompt-link" href="../admins/admin-page.jsp">Повернутись назад</a>
                 <br>
-                <a class="error-prompt-link" href="index.jsp">Повернутись на головну сторінку</a>
+                <a class="error-prompt-link" href="../index.jsp">Повернутись на головну сторінку</a>
             </div>
         </div>
     </div>

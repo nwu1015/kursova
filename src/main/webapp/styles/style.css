@@ -6,7 +6,6 @@ html {
 
 body {
     background-color: #EBE0CE;
-
 }
 
 .nav-with-logo {
@@ -358,10 +357,10 @@ footer h5{
 .purchases{
     width: 70%;
     border-collapse: collapse;
-
+    margin: auto;
 }
 
-.purchases th, td {
+.purchases th, .purchases td {
     border: 1px solid black;
     text-align: left;
     padding: 8px;
@@ -369,4 +368,97 @@ footer h5{
 
 .purchases th {
     background-color: #f2f2f2;
+}
+
+
+
+.confirm-purchase {
+    text-align: center; /* Вирівнюємо всі елементи форми по центру */
+}
+
+.input-group-basket{
+    width: 300px; /* Додано фіксовану ширину */
+    margin: 0 auto;
+}
+
+.input-basket {
+    max-width: 300px;
+    height: 44px;
+    background-color: white;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    margin-bottom: 10px; /* Доданий відступ вниз для всіх input */
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.label-basket {
+    display: block;
+    margin-bottom: .3rem;
+    font-size: .9rem;
+    font-weight: bold;
+    color: #ED655C;
+    transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.input-basket:hover, .input-basket:focus, .input-group-basket:hover .input-basket {
+    outline: none;
+    border-color: #C2372E;
+}
+
+.input-group-basket:hover .label-basket, .input-basket:focus {
+    color: #C2372E;
+}
+
+.confirm-purchase button {
+    background-color: #ED655C;
+    color: white;
+    border: none;
+    border-radius: .5rem;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.confirm-purchase button:hover {
+    background-color: #C2372E;
+}
+
+
+
+.sidebar-container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: #EBE0CE;
+    color: #CB5A42;
+    overflow-x: hidden; /* Додано, щоб уникнути горизонтального прокручування */
+}
+
+.sidebar {
+    position: sticky; /* Змінено */
+    top: 0;
+    width: 250px; /* Ширина колонки */
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Додано, щоб навігація була поверх іншого вмісту */
+}
+
+.nav-link {
+    color: red;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #B23434;
+    transition: background-color 0.3s ease;
+}
+
+.content {
+    justify-content: center;
+    margin-top: 20px; /* Додатковий відступ від верхнього краю */
 }
