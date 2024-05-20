@@ -52,7 +52,7 @@
 <br>
 
 <div class="card-container-wrapper">
-    <c:forEach var="element" items="${elements}">
+    <c:forEach var="element" items="${sessionScope.elements}">
         <div class="card-container">
             <div class="card">
                 <div class="card-image">

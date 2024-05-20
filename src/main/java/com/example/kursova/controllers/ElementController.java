@@ -11,7 +11,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 @WebServlet(name = "ElementController", value = {"/elements", "/index.jsp"})
-public class ElementController extends HttpServlet{
+public class ElementController extends HttpServlet {
     private ElementDao elementDao;
 
     @Override
@@ -26,12 +26,14 @@ public class ElementController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Collection<Element> elements = elementDao.findAll();
-        req.setAttribute("elements", elements);
+        HttpSession session = req.getSession();
+        session.setAttribute("elements", elements);
         req.getRequestDispatcher("jsp/title.jsp").forward(req, resp);
+        req.getRequestDispatcher("admins/admin-page.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        // Ваша логіка для обробки POST запитів (якщо потрібно)
     }
 }

@@ -55,13 +55,13 @@
                         <th>Опис</th>
                         <th>Шлях до картинки</th>
                     </tr>
-                    <c:forEach var="element1" items="${elements}">
+                    <c:forEach var="element" items="${sessionScope.elements}">
                         <tr>
-                            <td><c:out value="${element1.id}"/></td>
-                            <td><c:out value="${element1.name}"/></td>
-                            <td><c:out value="${element1.price}"/></td>
-                            <td><c:out value="${element1.description}"/></td>
-                            <td><c:out value="${element1.picture}"/></td>
+                            <td><c:out value="${element.id}"/></td>
+                            <td><c:out value="${element.name}"/></td>
+                            <td><c:out value="${element.price}"/></td>
+                            <td><c:out value="${element.description}"/></td>
+                            <td><c:out value="${element.picture}"/></td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -70,6 +70,6 @@
     </div>
 </div>
 
-<%@include file="/admins/testpage.jspf"%>
+
 </body>
 </html>
