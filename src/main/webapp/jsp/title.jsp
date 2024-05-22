@@ -63,13 +63,15 @@
                 <p><c:out value="${element.description}"/></p>
                 <div class="price-and-button">
                     <h2><c:out value="${element.price}"/> грн</h2>
-                    <button><i class="fa fa-shopping-basket"></i></button>
+
+                    <button type="submit">
+                        <i class="fa fa-shopping-basket"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </c:forEach>
 </div>
-
 
 <%@include file="/footer.jspf"%>
 

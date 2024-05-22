@@ -29,6 +29,30 @@
     </tr>
 </table>
 
+<c:if test="${not empty sessionScope.cart}">
+    <table>
+        <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Опис</th>
+            <th>Ціна</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="element" items="${sessionScope.cart}">
+            <tr>
+                <td><c:out value="${element.name}"/></td>
+                <td><c:out value="${element.description}"/></td>
+                <td><c:out value="${element.price}"/> грн</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</c:if>
+<c:if test="${empty sessionScope.cart}">
+    <p>Ваш кошик порожній</p>
+</c:if>
+
 <h2 class="text-title">Оформлення замовлення:</h2>
 
 <form class="confirm-purchase">

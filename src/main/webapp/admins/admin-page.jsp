@@ -62,9 +62,33 @@
                             <td><c:out value="${element.price}"/></td>
                             <td><c:out value="${element.description}"/></td>
                             <td><c:out value="${element.picture}"/></td>
+                            <td>
+                                <form action="${pageContext.request.contextPath}/elements" method="get">
+                                    <input type="submit" value="Edit">
+                                    <input type="hidden" name="command" value="edit">
+                                    <input type="hidden" name="id" value="${element.id}">
+                                </form>
+                            </td>
+                            <td>
+                                <form action="${pageContext.request.contextPath}/elements" method="post">
+                                    <input type="hidden" name="command" value="delete">
+                                    <input type="submit" value="Delete"/>
+                                    <input type="hidden" name="id" value="${element.id}">
+                                </form>
+                            </td>
                         </tr>
                     </c:forEach>
                 </table>
+            </div>
+            <div class="content">
+                <form action="${pageContext.request.contextPath}/elements" method="post">
+                    <input type="hidden" name="command" value="create">
+                    Name: <input type="text" name="name" value=""> <br>
+                    Description: <input type="text" name="description" value=""><br>
+                    Price: <input type="text" name="price" value=""><br>
+                    Picture: <input type="text" name="picture" value=""><br>
+                    <input type="submit" value="Add">
+                </form>
             </div>
         </main>
     </div>
