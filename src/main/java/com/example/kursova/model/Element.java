@@ -7,6 +7,8 @@ public class Element {
     private Integer price;
     private String picture;
 
+    private int quantity;
+
     public Element(Integer id, String name, String description, Integer price, String picture) {
         this.id = id;
         this.name = name;
@@ -60,5 +62,13 @@ public class Element {
 
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

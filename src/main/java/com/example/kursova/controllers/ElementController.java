@@ -3,6 +3,7 @@ package com.example.kursova.controllers;
 
 import java.io.*;
 import java.util.Collection;
+import java.util.*;
 
 import com.example.kursova.dao.ElementDao;
 import com.example.kursova.model.Element;
@@ -61,6 +62,9 @@ public class ElementController extends HttpServlet {
                 break;
             case "addToBasket":
                 addToBasket(req, resp);
+                break;
+            case "updateBasket":
+                updateBasket(req, resp);
                 break;
             default: resp.sendError(400, "Щось пішло не так! Перегляньте коректність введеної команди");
 
@@ -129,22 +133,57 @@ public class ElementController extends HttpServlet {
         }
     }
 
-    private void addToBasket(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+    private void addToBasket(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             Integer id = Integer.valueOf(req.getParameter("id"));
-            String name = req.getParameter("name");
-            String description = req.getParameter("description");
-            Integer price = Integer.valueOf(req.getParameter("price"));
-            String picture = req.getParameter("picture");
+            Element element = elementDao.findById(id);
 
-            Element element = new Element(id, name, description, price, picture);
+            if (element != null) {
+                HttpSession session = req.getSession();
+                List<Element> basket = (List<Element>) session.getAttribute("basket");
+                if (basket == null) {
+                    basket = new ArrayList<>();
+                }
 
-            req.setAttribute("element", element);
+                boolean alreadyInBasket = basket.stream().anyMatch(e -> e.getId().equals(id));
+                if (!alreadyInBasket) {
+                    basket.add(element);
+                }
 
-            req.getRequestDispatcher("admins/admin-page.jsp").forward(req, resp);
-
-        } catch (Exception e){
-            resp.sendError(400);
+                session.setAttribute("basket", basket);
+                resp.sendRedirect("menu.jsp");
+            } else {
+                resp.sendError(404, "Element not found");
+            }
+        } catch (NumberFormatException e) {
+            resp.sendError(400, "Invalid id format");
+        } catch (Exception e) {
+            resp.sendError(500);
         }
+    }
+
+    private void updateBasket(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+        List<Element> basket = (List<Element>) session.getAttribute("basket");
+        if (basket == null) {
+            resp.sendError(400, "Basket is empty");
+            return;
+        }
+
+        for (Element element : basket) {
+            String param = req.getParameter("quantity_" + element.getId());
+            if (param != null) {
+                try {
+                    int quantity = Integer.parseInt(param);
+                    element.setQuantity(quantity);
+                } catch (NumberFormatException e) {
+                    resp.sendError(400, "Invalid quantity format for element ID: " + element.getId());
+                    return;
+                }
+            }
+        }
+
+        session.setAttribute("basket", basket);
+        req.getRequestDispatcher("basket.jsp").forward(req, resp);
     }
 }

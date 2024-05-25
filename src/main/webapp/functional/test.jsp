@@ -41,14 +41,30 @@
             шедевром смаку, а кожен візит - це подорож у світ японської кухні і культури.
         </p>
         <br>
-        <button class="btn" onclick="window.location.href='menu.jsp'">Order now</button>
+        <button class="btn" onclick="scrollToMenu()">Order now</button>
     </div>
     <div class="main-picture">
         <img src="${pageContext.request.contextPath}/images/mainPic.png"  alt="bowl"/>
     </div>
 </div>
 
+<h1 id="menu" class="text-title">МЕНЮ</h1>
 <br>
+
+<%@include file="/functional/test1.jspf"%>
+
+<br>
+
+<form>
+    <input type="text" value="test">
+    <input type="hidden" name="id" value="${element.id}">
+</form>
+
+
 <%@include file="/footer.jspf"%>
+
+
+
+
 </body>
 </html>

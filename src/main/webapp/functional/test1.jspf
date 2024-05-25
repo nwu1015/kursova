@@ -1,0 +1,28 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page pageEncoding="UTF-8" %>
+<link rel="stylesheet" type="text/css" href="../styles/style.css">
+
+<div class="card-container-wrapper">
+    <c:forEach var="element" items="${sessionScope.elements}">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-image">
+                    <img src="<c:out value="${element.picture}"/>">
+                    <img src="${pageContext.request.contextPath}/images/california-poppies.png">
+                </div>
+                <h1><c:out value="${element.name}"/></h1>
+                <p><c:out value="${element.description}"/></p>
+                <div class="price-and-button">
+                    <h2><c:out value="${element.price}"/> грн</h2>
+
+                    <form>
+                        <input type="hidden" name="id" value="${element.id}">
+                        <button type="submit">
+                            <i class="fa fa-shopping-basket"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </c:forEach>
+</div>

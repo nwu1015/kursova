@@ -95,5 +95,37 @@
 </div>
 
 
+
+
+<h1>Confirmation</h1>
+<h2>Your Details:</h2>
+<p>Ім'я: ${sessionScope.name}</p>
+<p>Місто: ${sessionScope.city}</p>
+<p>Адреса: ${sessionScope.address}, Будинок: ${sessionScope.house}, Квартира: ${sessionScope.flat}</p>
+<p>Телефон: ${sessionScope.phone}</p>
+<p>Email: ${sessionScope.email}</p>
+
+<h2>Your Basket:</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Назва товару</th>
+        <th>Кількість</th>
+        <th>Ціна за 1 набір (грн)</th>
+        <th>Ціна (грн)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="element" items="${sessionScope.basket}">
+        <tr>
+            <td>${element.name}</td>
+            <td>${element.quantity}</td>
+            <td>${element.price}</td>
+            <td>${element.price * element.quantity}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+
 </body>
 </html>

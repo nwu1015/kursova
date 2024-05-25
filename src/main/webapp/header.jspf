@@ -10,7 +10,7 @@
         </div>
         <ul>
             <li>
-                <a href="#" onclick="scrollToMenu()">Меню</a>
+                <a href="menu.jsp">Меню</a>
             </li>
             <li>
                 <a href="basket.jsp">Кошик</a>
