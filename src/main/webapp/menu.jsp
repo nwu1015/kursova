@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Neko Sushi</title>
+    <title>Neko Sushi. Menu</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -26,14 +26,12 @@
         <div class="card-container">
             <div class="card">
                 <div class="card-image">
-                    <img src="<c:out value="${element.picture}"/>">
-                    <img src="${pageContext.request.contextPath}/images/california-poppies.png">
+                    <img src="<c:out value='${pageContext.request.contextPath}${element.picture}' />" alt="Element Picture"/>
                 </div>
-                <h1><c:out value="${element.name}"/></h1>
-                <p><c:out value="${element.description}"/></p>
+                <h2><c:out value="${element.name}"/></h2>
+                <h5><c:out value="${element.description}"/></h5>
                 <div class="price-and-button">
                     <h2><c:out value="${element.price}"/> грн</h2>
-
                     <form action="${pageContext.request.contextPath}/elements" method="post">
                         <input type="hidden" name="id" value="${element.id}">
                         <input type="hidden" name="command" value="addToBasket">

@@ -21,14 +21,4 @@
     </nav>
 </header>
 
-<script>
-    function scrollToMenu() {
-        var menuElement = document.getElementById('menu');
-        if (menuElement) {
-            menuElement.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            // Якщо елемента з id "menu" не знайдено, можна перенаправити користувача на сторінку з цим елементом
-            window.location.href = 'index.jsp';
-        }
-    }
-</script>
+

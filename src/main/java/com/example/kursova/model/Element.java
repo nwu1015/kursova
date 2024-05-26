@@ -1,6 +1,8 @@
 package com.example.kursova.model;
 
-public class Element {
+import java.io.Serializable;
+
+public class Element implements Serializable{
     private Integer id;
     private String name;
     private String description;

@@ -6,54 +6,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Title</title>
+    <title>Neko Sushi. Admin page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/style.css">
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
-        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
-            <div class="sidebar-sticky">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            Елементи меню
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Замовлення
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/index.jsp">
-                            На головну сторінку
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../logout">
-                            Вийти
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <%@include file="/admins/admin-navigation.jspf"%>
+
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 id="greeting">Вітаю вас на адмін сторінці, <%=request.getRemoteUser()%>!</h1>
-            </div>
             <div class="content">
                 <h1 class="text-title">ЕЛЕМЕНТИ МЕНЮ</h1>
             </div>
             <div class="content">
-                <table class="purchases">
+                <table class="basket-admin-table">
                     <tr>
                         <th>Id</th>
                         <th>Назва товару</th>
                         <th>Ціна (грн)</th>
                         <th>Опис</th>
                         <th>Шлях до картинки</th>
+                        <th>Функціональна частина</th>
                     </tr>
                     <c:forEach var="element" items="${sessionScope.elements}">
                         <tr>
@@ -64,15 +38,14 @@
                             <td><c:out value="${element.picture}"/></td>
                             <td>
                                 <form action="${pageContext.request.contextPath}/elements" method="get">
-                                    <input type="submit" value="Edit">
+                                    <input type="submit" value="Edit" class="basket-admin-button">
                                     <input type="hidden" name="command" value="edit">
                                     <input type="hidden" name="id" value="${element.id}">
                                 </form>
-                            </td>
-                            <td>
+                                <br>
                                 <form action="${pageContext.request.contextPath}/elements" method="post">
                                     <input type="hidden" name="command" value="delete">
-                                    <input type="submit" value="Delete"/>
+                                    <input type="submit" value="Delete" class="basket-admin-button">
                                     <input type="hidden" name="id" value="${element.id}">
                                 </form>
                             </td>
@@ -81,51 +54,34 @@
                 </table>
             </div>
             <div class="content">
+                <h1 class="text-title">ДОДАТИ НОВУ СТРАВУ</h1>
+            </div>
+            <div class="content">
                 <form action="${pageContext.request.contextPath}/elements" method="post">
                     <input type="hidden" name="command" value="create">
-                    Name: <input type="text" name="name" value=""> <br>
-                    Description: <input type="text" name="description" value=""><br>
-                    Price: <input type="text" name="price" value=""><br>
-                    Picture: <input type="text" name="picture" value=""><br>
-                    <input type="submit" value="Add">
+                    <div class="input-group-basket">
+                        <label class="label-basket">Ім'я</label>
+                        <input autocomplete="off" name="name" class="input-basket" type="text">
+                    </div>
+                    <div class="input-group-basket">
+                        <label class="label-basket">Опис</label>
+                        <input autocomplete="off" name="description" class="input-basket" type="text">
+                    </div>
+                    <div class="input-group-basket">
+                        <label class="label-basket">Ціна (грн)</label>
+                        <input autocomplete="off" name="price" class="input-basket" type="text">
+                    </div>
+                    <div class="input-group-basket">
+                        <label class="label-basket">Шлях до картинки</label>
+                        <input autocomplete="off" name="picture" class="input-basket" type="text">
+                    </div>
+                    <div class="input-group-basket">
+                        <button class="basket-admin-button" type="submit" value="Add" style="width: 75%;">Підтвердити</button>
+                    </div>
                 </form>
             </div>
         </main>
     </div>
 </div>
-
-
-
-
-<h1>Confirmation</h1>
-<h2>Your Details:</h2>
-<p>Ім'я: ${sessionScope.name}</p>
-<p>Місто: ${sessionScope.city}</p>
-<p>Адреса: ${sessionScope.address}, Будинок: ${sessionScope.house}, Квартира: ${sessionScope.flat}</p>
-<p>Телефон: ${sessionScope.phone}</p>
-<p>Email: ${sessionScope.email}</p>
-
-<h2>Your Basket:</h2>
-<table border="1">
-    <thead>
-    <tr>
-        <th>Назва товару</th>
-        <th>Кількість</th>
-        <th>Ціна за 1 набір (грн)</th>
-        <th>Ціна (грн)</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="element" items="${sessionScope.basket}">
-        <tr>
-            <td>${element.name}</td>
-            <td>${element.quantity}</td>
-            <td>${element.price}</td>
-            <td>${element.price * element.quantity}</td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-
 </body>
 </html>
