@@ -1,3 +1,4 @@
+/* All pages */
 html {
     padding: 0;
     margin: 0;
@@ -8,10 +9,11 @@ body {
     background-color: #EBE0CE;
 }
 
+/* header.jspf */
 .nav-with-logo {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Вирівнюємо елементи по вертикалі */
+    align-items: center;
     padding: 1rem 2rem;
 }
 
@@ -20,7 +22,7 @@ body {
     align-items: center;
     gap: 2rem;
     list-style: none;
-    margin: 0; /* Видаляємо зовнішні відступи списку */
+    margin: 0;
 }
 
 .nav-with-logo div img {
@@ -43,65 +45,66 @@ body {
     border-bottom: 1px solid #C2372E;
 }
 
+/* header.jspf - button "Сторінка адміністратора" */
 .sign-in {
-    display: inline-flex; /* Змінив display на inline-flex */
-    align-items: center; /* Вирівнюємо текс і кнопку по вертикалі */
-    padding: 8px 20px; /* Змінив padding, щоб кнопка була ближче до тексту */
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 20px;
     background-color: #CB5A42;
     color: white;
     text-align: center;
     font-size: 16px;
-    border-radius: 20px; /* Зменшив радіус заокруглення */
+    border-radius: 20px;
     border: none;
     cursor: pointer;
-    font-weight: 550; /* Задаємо помірну жирність */
+    font-weight: 550;
 }
 
+/* title.jsp - button "Order now" */
 .btn{
-    display: inline-flex; /* Змінив display на inline-flex */
-    align-items: center; /* Вирівнюємо текс і кнопку по вертикалі */
-    padding: 8px 20px; /* Змінив padding, щоб кнопка була ближче до тексту */
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 20px;
     background-color: #CB5A42;
     color: white;
     text-align: center;
     font-size: 16px;
-    border-radius: 20px; /* Зменшив радіус заокруглення */
+    border-radius: 20px;
     border: none;
     cursor: pointer;
-    font-weight: 1000; /* Задаємо помірну жирність */
-
+    font-weight: 1000;
     box-shadow: 1px 1px 20px #CB5A42;
 }
-
 
 .content {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Додаємо відступи зліва і справа */
+    padding: 0 20px;
 }
 
 .content .text {
     width: 100%;
     max-width: 600px;
-    padding: 0 40px; /* Додаємо внутрішні відступи з обох сторін */
+    padding: 0 40px;
 }
 
 .main-picture {
     flex-shrink: 0;
-    margin-left: 20px; /* Зберігаємо поточний відступ між картинкою і текстом */
+    margin-left: 20px;
 }
 
 .main-picture img {
-    width: 400px; /* Збільшуємо ширину картинки */
-    height: auto; /* Автоматична висота, щоб зберегти пропорції */
+    width: 400px;
+    height: auto;
 }
 
 .highlight {
     color: #CB5A42;
 }
 
+/* menu.jsp */
 .card-container-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -109,14 +112,12 @@ body {
 }
 
 .card-container{
-    margin: 0 10px 45px 10px; /* Додаємо bottom margin, щоб збільшити відстань між рядками */
+    margin: 0 10px 45px 10px;
     border-radius: 10px;
     box-shadow: 4px 4px 10px #CB5A42;
     width: 200px;
     height: 280px;
 }
-
-
 
 .card-container img {
     border-radius: 8px 8px 0 0;
@@ -127,10 +128,9 @@ body {
 .card-image {
     display: flex;
     justify-content: center;
-    align-items: center; /* Якщо потрібно також вертикальне вирівнювання */
-    height: 100%; /* Залежить від ваших потреб, якщо хочете вертикально вирівнювати */
+    align-items: center;
+    height: 100%;
 }
-
 
 .card-container h5 {
     text-align: center;
@@ -157,6 +157,7 @@ body {
     background: #DC6D55;
 }
 
+/* This element used almost in all pages to highlight key sentences */
 .text-title{
     color: #CB5A42;
     font-weight: bold;
@@ -164,12 +165,13 @@ body {
     font-family: 'Pacifico', cursive;
 }
 
+/* footer.jspf */
 footer h5{
     text-align: center;
     color: #EDBA65;
 }
 
-
+/* login.jsp */
 .form{
     box-sizing: border-box;
     background-color: #fff;
@@ -278,19 +280,17 @@ footer h5{
     justify-content: center;
 }
 
-
-
+/* login-error.jsp */
 .notifications-container {
-    width: 100%; /* Змінено */
-    height: 100vh; /* Змінено */
+    width: 100%;
+    height: 100vh;
     font-size: 0.875rem;
     line-height: 1.25rem;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Додано */
-    align-items: center; /* Додано */
+    justify-content: center;
+    align-items: center;
 }
-
 
 .flex {
     display: flex;
@@ -304,7 +304,7 @@ footer h5{
     border-radius: 0.375rem;
     padding: 1rem;
     background-color: rgb(254 242 242);
-    align-items: center; /* Додано для центрування вертикально */
+    align-items: center;
 }
 
 .error-svg {
@@ -356,32 +356,11 @@ footer h5{
     color: rgb(202 138 4);
 }
 
-
-.purchases{
-    width: 70%;
-    border-collapse: collapse;
-    margin: auto;
-}
-
-.purchases th, .purchases td {
-    border: 1px solid black;
-    text-align: left;
-    padding: 8px;
-}
-
-.purchases th {
-    background-color: #f2f2f2;
-}
-
-
-
-.confirm-purchase {
-    text-align: center; /* Вирівнюємо всі елементи форми по центру */
-}
-
+/* basket.jsp */
 .input-group-basket{
-    width: 300px; /* Додано фіксовану ширину */
+    width: 300px;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .input-basket {
@@ -392,7 +371,7 @@ footer h5{
     padding: 0 1rem;
     border: 2px solid transparent;
     font-size: 1rem;
-    margin-bottom: 10px; /* Доданий відступ вниз для всіх input */
+    margin-bottom: 10px;
     transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
 }
 
@@ -437,24 +416,25 @@ footer h5{
     height: 100vh;
     background-color: #EBE0CE;
     color: #CB5A42;
-    overflow-x: hidden; /* Додано, щоб уникнути горизонтального прокручування */
+    overflow-x: hidden;
 }
 
+/* admin-navigation.jspf */
 .sidebar {
-    position: sticky; /* Змінено */
+    position: sticky;
     top: 0;
-    width: 250px; /* Ширина колонки */
+    width: 250px;
     background-color: #F8F9FA;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1; /* Додано, щоб навігація була поверх іншого вмісту */
+    z-index: 1;
 }
 
 .nav-link {
     color: red;
     display: flex;
-    align-items: center; /* Вирівнювання по вертикалі */
+    align-items: center;
 }
 
 .nav-link:hover {
@@ -464,32 +444,33 @@ footer h5{
 }
 
 .nav-item.user-info .nav-link {
-    color: red; /* Для збереження консистентності кольору */
-    font-weight: bold; /* Додатковий стиль для виділення */
-    font-size: 1.2em; /* Збільшений розмір шрифту */
-    padding: 15px 10px; /* Додаткові відступи */
+    color: red;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 15px 10px;
 }
 
 .nav-item.user-info .nav-link i {
-    margin-right: 10px; /* Відступ іконки від тексту */
-    font-size: 2em; /* Збільшений розмір іконки */
+    margin-right: 10px;
+    font-size: 2em;
 }
 
+/* admin-page.jsp and admin-order.jsp*/
 .content {
     justify-content: center;
-    margin-top: 20px; /* Додатковий відступ від верхнього краю */
+    margin-top: 20px;
 }
 
 .content-order {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Відступ між таблицями */
+    gap: 20px;
 }
 
 .order-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px; /* Відступ знизу таблиці */
+    margin-bottom: 20px;
 }
 
 .order-table th, .order-table td {
@@ -499,11 +480,11 @@ footer h5{
 
 hr {
     border: 1px solid #ddd;
-    margin: 20px 0; /* Відступи навколо горизонтального роздільника */
+    margin: 20px 0;
 }
 
 
-
+/* These elements are responsible for the design of the tables used on the pages */
 .basket-admin-table {
     width: 100%;
     border-collapse: collapse;
@@ -546,9 +527,8 @@ hr {
     border-radius: 4px;
 }
 
-
 .basket-admin-button {
-    background-color: #ff6666; /* Світло-червоний */
+    background-color: #ff6666;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -559,7 +539,7 @@ hr {
 }
 
 .basket-admin-button:hover {
-    background-color: #e60000; /* Темно-червоний */
+    background-color: #e60000;
 }
 
 .basket-admin-table thead th {

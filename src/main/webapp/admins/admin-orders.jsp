@@ -1,15 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Comfy
-  Date: 26.05.2024
-  Time: 17:54
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Neko Sushi. Orders</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -59,8 +52,6 @@
                                 </c:if>
                             </tr>
                         </c:forEach>
-
-
                         </tbody>
                     </table>
                     <hr>

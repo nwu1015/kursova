@@ -4,11 +4,10 @@ import java.io.*;
 import java.util.*;
 
 import com.example.kursova.model.Element;
+import com.example.kursova.model.Order;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-
-import  com.example.kursova.model.Order;
 
 @WebServlet(name = "BasketServlet", urlPatterns = {"/updateBasket", "/submitForm", "/deleteOrder"})
 public class BasketServlet extends HttpServlet {
@@ -46,7 +45,6 @@ public class BasketServlet extends HttpServlet {
     private void submitForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
 
-        // Отримання даних з форми
         String name = request.getParameter("Name");
         String city = request.getParameter("City");
         String address = request.getParameter("Adress");
@@ -57,32 +55,22 @@ public class BasketServlet extends HttpServlet {
         String phone = request.getParameter("Phone");
         String email = request.getParameter("Email");
 
-        // Отримання даних кошика
         List<Element> basket = (List<Element>) session.getAttribute("basket");
         if (basket == null || basket.isEmpty()) {
             response.sendRedirect("basket.jsp");
             return;
         }
 
-        // Створення нового замовлення
         Order order = new Order(name, city, address, house, flat, date, time, phone, email, new ArrayList<>(basket));
 
-        // Отримання списку замовлень із сесії або створення нового списку, якщо його ще немає
         List<Order> orders = (List<Order>) session.getAttribute("orders");
         if (orders == null) {
             orders = new ArrayList<>();
         }
 
-        // Додавання нового замовлення до списку
         orders.add(order);
-
-        // Оновлення атрибута сесії
         session.setAttribute("orders", orders);
-
-        // Очищення кошика
         session.removeAttribute("basket");
-
-        // Повернення на сторінку кошика
         response.sendRedirect("basket.jsp");
     }
 

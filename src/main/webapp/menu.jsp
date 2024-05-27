@@ -1,7 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +14,6 @@
 <%@include file="/header.jspf"%>
 
 <br>
-
 
 <h1 id="menu" class="text-title">МЕНЮ</h1>
 <br>
@@ -45,16 +42,8 @@
     </c:forEach>
 </div>
 
-
-
 <br>
 
-
-
 <%@include file="/footer.jspf"%>
-
-
-
-
 </body>
 </html>

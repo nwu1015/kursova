@@ -6,7 +6,6 @@
 </head>
 <body>
 <%@include file="header.jspf"%>
-
 <h1 class="text-title">КОРЗИНА</h1>
 
 <br>
@@ -86,7 +85,6 @@
         <button class="basket-admin-button" type="submit" style="width: 75%;">Підтвердити</button>
     </div>
 </form>
-
 
 <%@include file="footer.jspf"%>
 
