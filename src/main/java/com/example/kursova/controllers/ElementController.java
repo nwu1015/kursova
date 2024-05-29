@@ -63,9 +63,7 @@ public class ElementController extends HttpServlet {
             case "addToBasket":
                 addToBasket(req, resp);
                 break;
-            case "updateBasket":
-                updateBasket(req, resp);
-                break;
+
             default: resp.sendError(400, "Щось пішло не так! Перегляньте коректність введеної команди");
 
         }
@@ -153,37 +151,12 @@ public class ElementController extends HttpServlet {
                 session.setAttribute("basket", basket);
                 resp.sendRedirect("menu.jsp");
             } else {
-                resp.sendError(404, "Element not found");
+                resp.sendError(404, "Елемент не знайдемо");
             }
         } catch (NumberFormatException e) {
-            resp.sendError(400, "Invalid id format");
+            resp.sendError(400, "Недійсний формат id");
         } catch (Exception e) {
             resp.sendError(500);
         }
-    }
-
-    private void updateBasket(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        List<Element> basket = (List<Element>) session.getAttribute("basket");
-        if (basket == null) {
-            resp.sendError(400, "Basket is empty");
-            return;
-        }
-
-        for (Element element : basket) {
-            String param = req.getParameter("quantity_" + element.getId());
-            if (param != null) {
-                try {
-                    int quantity = Integer.parseInt(param);
-                    element.setQuantity(quantity);
-                } catch (NumberFormatException e) {
-                    resp.sendError(400, "Invalid quantity format for element ID: " + element.getId());
-                    return;
-                }
-            }
-        }
-
-        session.setAttribute("basket", basket);
-        req.getRequestDispatcher("basket.jsp").forward(req, resp);
     }
 }

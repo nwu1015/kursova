@@ -9,7 +9,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "BasketServlet", urlPatterns = {"/updateBasket", "/submitForm", "/deleteOrder"})
+@WebServlet(name = "BasketServlet", urlPatterns = {"/updateBasket", "/submitForm"})
 public class BasketServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,8 +19,6 @@ public class BasketServlet extends HttpServlet {
             updateBasket(request, response);
         } else if ("/submitForm".equals(action)) {
             submitForm(request, response);
-        } else if ("/deleteOrder".equals(action)) {
-            deleteOrder(request, response);
         }
     }
 
@@ -72,22 +70,5 @@ public class BasketServlet extends HttpServlet {
         session.setAttribute("orders", orders);
         session.removeAttribute("basket");
         response.sendRedirect("basket.jsp");
-    }
-
-    private void deleteOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            int orderId = Integer.parseInt(request.getParameter("orderId"));
-            HttpSession session = request.getSession();
-            List<Order> orders = (List<Order>) session.getAttribute("orders");
-
-            if (orders != null && orderId >= 0 && orderId < orders.size()) {
-                orders.remove(orderId);
-                session.setAttribute("orders", orders);
-            }
-
-            response.sendRedirect("admins/admin-orders.jsp");
-        } catch (Exception e) {
-            response.sendError(400, "Invalid order ID");
-        }
     }
 }

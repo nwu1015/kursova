@@ -8,7 +8,7 @@ public class InMemoryElementDao implements ElementDao{
     private TreeMap<Integer, Element> elements = new TreeMap<>();
 
     @Override
-    public void create(Element element) { // no id
+    public void create(Element element) {
         int id = elements.isEmpty() ? 1 : elements.lastKey() + 1;
         element.setId(id);
         elements.put(id, element);

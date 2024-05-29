@@ -10,7 +10,7 @@ public interface ElementDao {
 
     Collection<Element> findAll();
 
-    void update(Element riddle);
+    void update(Element element);
 
     void deleteById(Integer id);
 }
